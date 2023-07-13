@@ -1,0 +1,113 @@
+<!-- POP UP FORM -->
+<div class="sticky">
+    <!-- sticky ELEMENT: make element "stick" to a specific position on the screen as the user scrolls -->
+    <div class="form-container add-product-form" [class.active]="isActive">
+
+        <!-- ADD PRODUCT FORM -->
+        <form [formGroup]="productForm" class="product-form">
+            <div class="product-form-header">
+                <!-- FORM TITLE -->
+                <h2 class="product-form-title">
+                    <span>
+                        Add
+                    </span>
+                    Product
+                </h2>
+
+                <!-- CLOSE FORM BUTTON -->
+                <a class="close-form-btn" (click)="closeAddProductForm()">
+                    <fa-icon [icon]="closeIcon"></fa-icon>
+                </a>
+            </div>
+
+            <div class="user-input-wrp">
+                <input type="text" class="input-text capitalize" formControlName="productName" required>
+                <span class="floating-label">
+                    {{ defaultParams.productName }}
+                </span>
+
+                <!-- ERROR MESSAGE -->
+                <div *ngIf="productForm.controls['productName'].invalid && (productForm.controls['productName'].dirty || productForm.controls['productName'].touched)"
+                    class="error-message">
+                    <p>
+                        <fa-icon [icon]="warningIcon"></fa-icon>
+                        Product name is required
+                    </p>
+                </div>
+            </div>
+
+            <div class="product-form-input">
+                <div class="user-input-wrp">
+                    <input type="text" class="input-text" formControlName="productImage" required>
+                    <span class="floating-label">
+                        {{ defaultParams.productImage }}
+                    </span>
+
+                    <!-- ERROR MESSAGE -->
+                    <div *ngIf="productForm.controls['productImage'].invalid && (productForm.controls['productImage'].dirty || productForm.controls['productImage'].touched)"
+                        class="error-message">
+                        <p>
+                            <fa-icon [icon]="warningIcon"></fa-icon>
+                            Product image is required
+                        </p>
+                    </div>
+                </div>
+
+                <div class="user-input-wrp">
+                    <input type="text" class="input-text" formControlName="productDescription" required>
+                    <span class="floating-label">
+                        {{ defaultParams.productDescription }}
+                    </span>
+
+                    <!-- ERROR MESSAGE -->
+                    <div *ngIf="productForm.controls['productDescription'].invalid && (productForm.controls['productDescription'].dirty || productForm.controls['productDescription'].touched)"
+                        class="error-message">
+                        <p>
+                            <fa-icon [icon]="warningIcon"></fa-icon>
+                            Product description is required
+                        </p>
+                    </div>
+                </div>
+
+                <div class="user-input-wrp">
+                    <input type="text" formControlName="category" required>
+                    <span class="floating-label">
+                        {{ defaultParams.productCategory }}
+                    </span>
+
+                    <!-- ERROR MESSAGE -->
+                    <div *ngIf="productForm.controls['category'].invalid && (productForm.controls['category'].dirty || productForm.controls['category'].touched)"
+                        class="error-message">
+                        <p>
+                            <fa-icon [icon]="warningIcon"></fa-icon>
+                            Product category is required
+                        </p>
+                    </div>
+                </div>
+
+                <div class="user-input-wrp">
+                    <input type="text" class="input-text" formControlName="price" required>
+                    <span class="floating-label">
+                        {{ defaultParams.productPrice | currency }}
+                    </span>
+
+                    <!-- ERROR MESSAGE -->
+                    <div *ngIf="productForm.controls['price'].invalid && (productForm.controls['price'].dirty || productForm.controls['price'].touched)"
+                        class="error-message">
+                        <p>
+                            <fa-icon [icon]="warningIcon"></fa-icon>
+                            Product price is required
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ADD PRODUCT BUTTON -->
+                <button class="addProductBtn" (click)="addProduct()" [ngClass]="productForm.valid ? 'enabled' : 'disabled'">
+                    <fa-icon [icon]="upIcon"></fa-icon>
+                    Add product
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--================ FORM END ================-->

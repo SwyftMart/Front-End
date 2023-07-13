@@ -1,0 +1,129 @@
+<!-- HEADER SECTION -->
+<header>
+  <img class="logo" src={{logoImageURL}} alt="logo">
+  <!-- NAVIGATION -->
+  <nav class="navigation">
+    <ul class="nav-links">
+      <li class="link-item">
+        <span class="is-active-wrapper">
+          <a class="link is-active" (click)="WelcomeMessage()">
+            <fa-icon [icon]="homeIcon"></fa-icon>
+            Home
+          </a>
+        </span>
+      </li>
+      <li class="link-item">
+        <a class="link" (click)="setCategoriesActive()">
+          Categories
+        </a>
+      </li>
+      <li class="link-item">
+        <a class="link" (click)="redirectToHomePage()">
+          Latest
+        </a>
+      </li>
+      <li class="link-item" *ngIf="Authenticated()">
+        <span class="is-active-wrapper">
+          <a class="link is-active" (click)="setAddProductFormActive()">
+            <fa-icon [icon]="plusIcon">
+            </fa-icon>
+            Add Product <!--ADD PRODUCT EVENT HERE -->
+          </a>
+        </span>
+      </li>
+      <li class="link-item">
+        <a class="link" (click)="setCartActive()">
+          <fa-icon [icon]="cartIcon"></fa-icon>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- CTA BUTTONS -->
+  <div class="cta">
+    <!-- TOGGLE CART ICON -->
+    <a class="link cart-toggle" (click)="setCartActive()">
+      <fa-icon [icon]="cartIcon"></fa-icon>
+    </a>
+    <!-- SIGN UP BUTTON -->
+    <a class="sign-up-btn" (click)="setSignUpActive()" *ngIf="!Authenticated()">
+      Sign Up
+    </a>
+    <!-- SIGN IN BUTTON -->
+    <button class="sign-in-btn" (click)="setSignInActive()">
+      {{ isSignedIn ? 'Sign Out': 'Sign In' }}
+      <fa-icon [icon]="lockIcon"></fa-icon>
+    </button>
+  </div>
+
+  <!-- MOBILE ACTIONS -->
+  <div class="mobile-actions">
+    <!-- TOGGLE CART -->
+    <a class="cart-icon" (click)="setCartActive()">
+      <fa-icon [icon]="cartIcon"></fa-icon>
+    </a>
+    <!-- TOGGLE ADD PRODUCT FORM -->
+    <a class="plus-icon" *ngIf="Authenticated()">
+      <fa-icon [icon]="plusIcon" (click)="setAddProductFormActive()"></fa-icon>
+    </a>
+    <!-- TOGGLE SIDE NAVIGATION -->
+    <a class="ellipsis-icon">
+      <fa-icon [icon]="ellipsisIcon"></fa-icon>
+    </a>
+  </div>
+</header>
+<!--======================-->
+<!-- STANDALONE COMPONENTS -->
+<!--======================-->
+<!-- ADD PRODUCT FORM -->
+<add-product></add-product>
+
+<!-- SIGN UP FORM  -->
+<signup></signup>
+
+<!-- SIGN IN FORM -->
+<signin></signin>
+
+<!-- CATEGORIES FORM -->
+<app-categories></app-categories>
+
+<!-- RESET PASSWORD FORM -->
+<reset-password></reset-password>
+
+<!-- MESSAGE BOX -->
+<message-box></message-box>
+
+<!-- CART -->
+<cart></cart>
+<!--======================-->
+<!--======== END ========-->
+<!--======================-->
+
+<!-- HERO SECTION -->
+<span class="hero-wrapper">
+  <section class="hero">
+    <h2 class="promo">
+      Swyft
+    </h2>
+  </section>
+</span>
+
+<!-- PRODUCT SECTION -->
+<section class="product-container">
+  <!-- WELCOME MESSAGE TILE -->
+  <h2 class="welcome-title">
+    "Gear up for Victory with
+    <span>
+      Swyft Tech"
+      <fa-icon [icon]="bagIcon"></fa-icon>
+    </span>
+  </h2>
+  <div class="products-wrapper">
+    <div class="products">
+      <div class="grid-wrapper">
+        <!-- PRODUCT -->
+        <product></product>
+      </div>
+    </div>
+  </div>
+</section>

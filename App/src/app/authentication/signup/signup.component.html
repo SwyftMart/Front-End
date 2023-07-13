@@ -1,0 +1,173 @@
+<!-- POP UP FORM -->
+<div class="sticky">
+  <!-- sticky ELEMENT: make element "stick" to a specific position on the screen as the user scrolls -->
+  <div class="form-container sign-up-form" [class.active]="isActive">
+
+    <!-- SIGN UP FORM -->
+    <form [formGroup]="signUpForm" class="form">
+
+      <div class="form-header">
+        <!-- FORM TITLE -->
+        <h2 class="form-title">
+          <span>
+            Sign
+          </span>
+          Up
+        </h2>
+
+        <!-- CLOSE FORM BUTTON -->
+        <a class="close-form-btn" (click)="closeSignUpForm()">
+          <fa-icon [icon]="closeIcon"></fa-icon>
+        </a>
+      </div>
+
+      <div class="form-input">
+        <div class="user-input-wrp">
+          <input type="text" class="input-text" formControlName="email" required>
+          <span class="floating-label">
+            {{ defaultParams.email }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signUpForm.controls['email'].invalid && (signUpForm.controls['email'].dirty || signUpForm.controls['email'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              A valid email is required
+            </p>
+          </div>
+        </div>
+
+        <div class="user-input-wrp">
+          <input type="password" class="input-text" formControlName="userPassword" required>
+          <span class="floating-label">
+            {{ defaultParams.userPassword }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signUpForm.controls['userPassword'].invalid && (signUpForm.controls['userPassword'].dirty || signUpForm.controls['userPassword'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              Password must contain
+              <br>
+              letters, numbers and symbols
+            </p>
+          </div>
+        </div>
+
+        <div class="user-input-wrp">
+          <input type="text" class="input-text" formControlName="firstName" required>
+          <span class="floating-label">
+            {{ defaultParams.firstName}}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signUpForm.controls['firstName'].invalid && (signUpForm.controls['firstName'].dirty || signUpForm.controls['firstName'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              First name is required
+            </p>
+          </div>
+        </div>
+
+        <div class="user-input-wrp">
+          <input type="text" class="input-text" formControlName="lastName" required>
+          <span class="floating-label">
+            {{ defaultParams.lastName }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signUpForm.controls['lastName'].invalid && (signUpForm.controls['lastName'].dirty || signUpForm.controls['lastName'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              Last name is required
+            </p>
+          </div>
+        </div>
+
+        <div class="user-input-wrp">
+          <input type="text" class="input-text" formControlName="streetAddress" required>
+          <span class="floating-label">
+            {{ defaultParams.streetAddress }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signUpForm.controls['streetAddress'].invalid && (signUpForm.controls['streetAddress'].dirty || signUpForm.controls['streetAddress'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              Street address is required
+            </p>
+          </div>
+        </div>
+
+        <div class="user-input-wrp">
+          <input type="text" class="input-text" formControlName="city" required>
+          <span class="floating-label">
+            {{ defaultParams.city }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signUpForm.controls['city'].invalid && (signUpForm.controls['city'].dirty || signUpForm.controls['city'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              City is required
+            </p>
+          </div>
+        </div>
+
+        <div class="user-input-wrp">
+          <input type="text" class="input-text" formControlName="country" required>
+          <span class="floating-label">
+            {{ defaultParams.country }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signUpForm.controls['country'].invalid && (signUpForm.controls['country'].dirty || signUpForm.controls['country'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              Country is required
+            </p>
+          </div>
+
+        </div>
+
+        <div class="user-input-wrp">
+          <input type="text" class="input-text" formControlName="phone" required>
+          <span class="floating-label">
+            {{ defaultParams.phone }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signUpForm.controls['phone'].invalid && (signUpForm.controls['phone'].dirty || signUpForm.controls['phone'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              Phone number is required
+            </p>
+          </div>
+        </div>
+
+        <!-- SIGN UP BUTTON -->
+        <button class="signUpBtn" (click)="signUp()" [ngClass]="signUpForm.valid ? 'enabled' : 'disabled'">
+          <fa-icon [icon]="upIcon"></fa-icon>
+          Sign Up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!--============== FORM END ================-->

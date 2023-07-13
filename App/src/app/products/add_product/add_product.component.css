@@ -1,0 +1,333 @@
+/*
+*------------------
+* ADD PRODUCT FORM 
+*------------------
+*/
+
+/* sticky ELEMENT: make an element "stick" to a specific position on the screen as the user scrolls */
+.sticky {
+    position: fixed;
+    top: 15%;
+    right: 35%;
+    z-index: 10;
+    animation: hover 2.2s infinite;
+}
+
+.add-product-form {
+    position: absolute;
+    z-index: 10;
+    top: 10%;
+    right: 10%;
+    background: var(--white);
+    border-radius: .5rem;
+    border: 1px solid var(--folly);
+    border-top: 12px solid var(--folly);
+    box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.3);
+    width: 25rem;
+    padding: 2rem;
+    transform: scale(0);
+    transform-origin: top center;
+    transition: .3s all ease;
+}
+
+.add-product-form .product-form .product-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--folly);
+    margin-bottom: 1.9rem;
+}
+
+.add-product-form .product-form .product-form-header span {
+    font-size: 1.7rem;
+    padding: .6rem;
+    border-radius: 3px;
+    background: var(--folly);
+    box-shadow: 0 .3rem .4rem 0 rgba(0, 0, 0, .4);
+    color: var(--white);
+    display: inline-block;
+    transform: rotate(-15deg);
+}
+
+/*
+*--------------------
+* CLOSE FORM BUTTON 
+*-------------------
+*/
+.close-form-btn {
+    background: var(--folly);
+    color: var(--white);
+    clip-path: circle(40% at 50% 50%);
+    padding: .7rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.add-product-form input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--folly);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: .3rem;
+    margin-bottom: 2rem;
+}
+
+.add-product-form label {
+    font-weight: 700;
+    color: var(--folly);
+}
+
+.add-product-form input:focus {
+    outline: none;
+    animation: border-glow 1s infinite;
+}
+
+.user-input-wrp {
+    position: relative;
+    width: 100%;
+}
+
+.user-input-wrp .input-text {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #F73859ff;
+    color: #505050;
+    box-shadow: none !important;
+}
+
+.input-price {
+    color: #505050;
+}
+
+/* CAPITALIZE INPUT FOR OVERALL COSISTENCY */
+.capitalize {
+    text-transform: capitalize;
+}
+
+.user-input-wrp .floating-label {
+    position: absolute;
+    pointer-events: none;
+    top: 7px;
+    left: 10px;
+    transition: 0.2s ease all;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #9c9c9c;
+}
+
+/*
+ * ---------------------------------------------------------
+  .user-input-wrp input:focus~.floating-label: 
+
+ This selector targets the ".floating-label" element that comes after the focused input element within the ".user-input-wrp" container. It applies the following styles 
+
+top: -15px; => Moves the floating label 15 pixels above its original position.
+
+left: 10px; => Moves the floating label 10 pixels to the left of its original position.
+
+font-size: 13px; => Sets the font size of the floating label to 13 pixels.
+
+opacity: 1; => Makes the floating label fully visible.
+
+color: var(--folly); => Sets the text color of the floating label using a custom CSS variable named "--folly".
+
+
+.user-input-wrp input:not(:focus):valid~.floating-label:
+
+This selector targets the ".floating-label" element that comes after an input element within the ".user-input-wrp" container when the input is not in focus but has valid content. It applies the same styles as mentioned above. 
+* ---------------------------------------------------------
+*/
+
+.user-input-wrp input:focus~.floating-label,
+.user-input-wrp input:not(:focus):valid~.floating-label {
+    top: -15px;
+    left: 10px;
+    font-size: 13px;
+    opacity: 1;
+    color: var(--folly);
+}
+
+/* INPUT ERROR STYLING */
+.error-message {
+    width: 100%;
+    text-align: right;
+    margin-top: -1rem;
+    margin-bottom: 1.2rem;
+    white-space: nowrap;
+    animation: glow 1s infinite;
+}
+
+.error-message p {
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    font-size: .8rem;
+    color: var(--folly);
+}
+
+/*
+*--------------------------------
+*ADD PRODUCT FORM : ACTIVE STATE
+*--------------------------------
+*/
+.add-product-form.active {
+    transform: scale(1);
+}
+
+.addProductBtn {
+    width: 100%;
+    border: none;
+    border-radius: 24px 0;
+    padding: 1rem;
+    background: linear-gradient(to right, #F73859ff, rgb(255, 17, 56));
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: .4s all ease;
+}
+
+.addProductBtn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+/* DISABLED & ENABLED STATES */
+.enabled {
+    opacity: 1;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+/********************************
+********** ANIMATIONS **********
+*******************************/
+
+/*
+*----------------
+* GLOW ANIMATION 
+*----------------
+*/
+@-webkit-keyframes glow {
+    0% {
+        opacity: .7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .7;
+    }
+}
+@keyframes glow {
+    0% {
+        opacity: .7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .7;
+    }
+}
+
+/*
+*------------------
+* HOVER ANIMATION 
+*------------------
+*/
+@-webkit-keyframes hover {
+    0% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+
+    50% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes hover {
+    0% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+
+    50% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+
+    100% {
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+    }
+}
+
+/* 
+*--------------------------
+* INPUT BORDER DOTTOM GLOW 
+*--------------------------
+*/
+@-webkit-keyframes border-glow {
+    0% {
+        border-bottom: 1px solid #F73859ff;
+    }
+
+    50% {
+        border-bottom: 1px solid rgba(247, 56, 88, 0.4);
+    }
+
+    100% {
+        border-bottom: 1px solid #F73859ff;
+    }
+}
+
+@keyframes border-glow {
+    0% {
+        border-bottom: 1px solid #F73859ff;
+    }
+
+    50% {
+        border-bottom: 1px solid rgba(247, 56, 88, 0.4);
+    }
+
+    100% {
+        border-bottom: 1px solid #F73859ff;
+    }
+}
+
+
+
+/*
+*--------------
+* MEDIA QUERIES 
+*---------------
+*/
+@media (max-width: 425px) {
+
+    .sticky {
+        top: 5%;
+        right: 5%;
+    }
+
+    .add-product-form {
+        width: 19rem;
+    }
+}

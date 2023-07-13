@@ -1,0 +1,230 @@
+/* COLOR PALETTE */
+:root {
+    --folly: #F73859ff;
+    --salmon-pink: #FA94A6ff;
+    --white: #FFFFFFff;
+    --cherry-blossom-pink: #FBB6C2ff;
+}
+
+/* PRODUCT COMPONENT` */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border-bottom: 6px solid var(--folly);
+    margin-bottom: 1rem;
+    border-radius: 21px 21px 0px 21px;
+    transition: .3s all ease;
+    cursor: grab;
+    height: 370px;
+}
+
+.product:nth-child(even) {
+    box-shadow: 0 2rem 2rem 0 rgba(0, 0, 0, .1);
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 2rem 2rem 0 rgba(0, 0, 0, .1);
+}
+
+.img-container {
+    position: relative;
+}
+
+.product-img {
+    width: 100%;
+    /* SET FIXED WIDTH &
+                           * HEIGHT AND OBJECT FIT TO COVER TO RESIZE ALL IMAGES*/
+    height: 190px;
+    object-fit: cover;
+    border-radius: 21px 0px 0px 21px;
+    transition: .4s all ease;
+}
+
+.product-img:hover {
+    filter: sepia(20%);
+}
+
+/* PRODUCT ICON STYLING */
+.icon-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--folly);
+    border-radius: 0 0px 0 24px;
+    box-shadow: 0 .3rem .5rem 0 rgba(0, 0, 0, .1);
+}
+
+/* ICON WRAPPER | a TAG */
+.btn {
+    padding: .5rem 0;
+}
+
+.btn:hover {
+    animation: heartbeat 1.5s;
+}
+
+.icon {
+    font-size: 1.5rem;
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    padding: .5rem;
+    transition: .4s all ease;
+    clip-path: circle(45% at 50% 50%);
+}
+
+.icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.product-details {
+    padding: 1.5rem;
+}
+
+.product-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #575757;
+}
+
+.product-price {
+    font-size: 1rem;
+    color: var(--folly);
+}
+
+.product-price span {
+    color: #6b6b6b;
+    font-weight: 500;
+    font-size: .8rem;
+    text-decoration: line-through;
+}
+
+.product-description {
+    font-weight: 600;
+    font-size: .8rem;
+    padding-top: .9rem;
+    color: #6b6b6b;
+}
+
+
+/*
+*-------------
+* ANIMATIONS 
+*-------------
+*/
+/**
+ * ----------------------------------------
+ * animation heartbeat
+ * ----------------------------------------
+ */
+@-webkit-keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+
+
+
+/*
+*--------------
+* MEDIA QUERIES 
+*---------------
+*/
+@media (max-width: 768px) {
+    .product-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .product {
+        width: 100%;
+    }
+}

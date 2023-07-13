@@ -1,0 +1,87 @@
+<!-- POP UP FORM -->
+<div class="sticky">
+  <!-- sticky ELEMENT: make element "stick" to a specific position on the screen as the user scrolls -->
+  <div class="form-container categories-form" [class.active]="isActive">
+
+    <!-- CATEGORIES FORM -->
+    <form class="form">
+
+      <div class="form-header">
+        <!-- FORM TITLE -->
+        <h2 class="form-title">
+          <span>
+            ALL
+          </span>
+          Categories
+        </h2>
+
+        <!-- CLOSE FORM BUTTON -->
+        <a class="close-form-btn" (click)="closeCategoriesForm()">
+          <fa-icon [icon]="closeIcon"></fa-icon>
+        </a>
+      </div>
+
+      <!-- CATEGORIES CHECKBOXES -->
+
+      <div class="allcategories">
+
+        <div class="category-container">
+          <!-- 
+            <input class="categoriescheckbox" type="checkbox" id="allCategories" name="allCategories"  value="allCategories" [(ngModel)]="selectedCategories['all']" (change)="filterProducts()"> -->
+
+          <div class="input-wrp">
+            <label for="phones" class="category-label">
+              Phones
+              <fa-icon [icon]="phoneIcon"></fa-icon>
+            </label>
+
+            <input type="checkbox" id="phones" name="phones" value="Phones" [(ngModel)]="selectedCategories['phones']"
+              (change)="filterProducts()">
+          </div>
+
+
+          <div class="input-wrp">
+            <label for="laptops" class="category-label">
+              Laptops
+              <fa-icon [icon]="laptopIcon"></fa-icon>
+            </label>
+
+            <input type="checkbox" id="laptops" name="laptops" value="Laptops"
+              [(ngModel)]="selectedCategories['laptops']" (change)="filterProducts()">
+          </div>
+
+
+          <div class="input-wrp">
+            <label for="gaming" class="category-label">
+              Gaming
+              <fa-icon [icon]="gamePadIcon"></fa-icon>
+            </label>
+
+            <input type="checkbox" id="gaming" name="gaming" value="Gaming" [(ngModel)]="selectedCategories['gaming']"
+              (change)="filterProducts()">
+          </div>
+
+
+          <div class="input-wrp">
+            <label for="desktops" class="category-label">
+              Desktops
+              <fa-icon [icon]="desktopIcon"></fa-icon>
+            </label>
+
+            <input type="checkbox" id="desktops" name="desktops" value="Desktops"
+              [(ngModel)]="selectedCategories['desktops']" (change)="filterProducts()">
+          </div>
+
+
+        </div>
+
+        <!-- PREVIOUS LABEL CONTAINER -->
+        <div class="categorieslabels">
+          <!-- <label for="allCategories">All Categories</label> -->
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+<!--============== FORM END ===========-->

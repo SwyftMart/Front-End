@@ -1,0 +1,19 @@
+<!-- display-single-product.component.html -->
+<div class="single-product-container">
+  <div class="single-product">
+    <button class="close-button" (click)="closeProduct()">Close</button>
+
+    <div class="img-container">
+      <img loading="lazy" draggable="false" src="{{ product.productImage }}" alt="product image" class="product-img">
+    </div>
+
+    <div class="product-details">
+      <h2 class="product-title">{{ product.productName }}</h2>
+
+      <!-- Add more details about the product -->
+      <p class="product-description">{{ product.productDescription }}</p>
+
+      <h3 class="product-price">{{ product.price | currency }}</h3>
+    </div>
+  </div>
+</div>

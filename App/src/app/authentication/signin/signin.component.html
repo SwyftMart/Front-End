@@ -1,0 +1,74 @@
+<!-- POP UP FORM -->
+<div class="sticky">
+  <!-- sticky ELEMENT: make element "stick" to a specific position on the screen as the user scrolls -->
+  <div class="form-container sign-in-form" [class.active]="isActive">
+
+    <!-- SIGN UP FORM -->
+    <form [formGroup]="signInForm" class="form">
+
+      <div class="form-header">
+        <!-- FORM TITLE -->
+        <h2 class="form-title">
+          <span>
+            Sign
+          </span>
+          In
+        </h2>
+
+        <!-- CLOSE FORM BUTTON -->
+        <a class="close-form-btn" (click)="closeSignInForm()">
+          <fa-icon [icon]="closeIcon"></fa-icon>
+        </a>
+      </div>
+
+      <div class="form-input">
+        <div class="user-input-wrp">
+          <input type="text" class="input-text" formControlName="email" required>
+          <span class="floating-label">
+            {{ defaultParams.email }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signInForm.controls['email'].invalid && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              A valid email is required
+            </p>
+          </div>
+        </div>
+
+        <div class="user-input-wrp">
+          <input type="password" class="input-text" formControlName="userPassword" required>
+          <span class="floating-label">
+            {{ defaultParams.password }}
+          </span>
+
+          <!-- ERROR MESSAGE -->
+          <div
+            *ngIf="signInForm.controls['userPassword'].invalid && (signInForm.controls['userPassword'].dirty || signInForm.controls['userPassword'].touched)"
+            class="error-message">
+            <p>
+              <fa-icon [icon]="warningIcon"></fa-icon>
+              Password is required
+            </p>
+          </div>
+        </div>
+
+        <!-- SIGN IN BUTTON -->
+        <button class="signInBtn" (click)="signIn()" [ngClass]="{'disabled': !signInForm.valid, 'enabled': signInForm.valid}">
+          <fa-icon [icon]="upIcon"></fa-icon>
+          Sign In
+        </button>
+      </div>
+    </form>
+
+    <!-- RESET PASSWORD BUTTON -->
+    <button class="forgotPasswordBtn" (click)="setResetPasswordActive()">
+      <fa-icon [icon]="frownEmoji"></fa-icon>
+      Forgot Password
+    </button>
+  </div>
+</div>
+<!--============= FORM END ===============-->

@@ -1,0 +1,42 @@
+[
+    {
+        "id": "101",
+        "productName": "Magic Mouse - Black Multi-Touch Surface", 
+        "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MMMQ3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1645138486301",
+        "productDescription": "Magic Mouse is wireless and rechargeable, with an optimized foot design that lets it glide smoothly across your desk.",
+        "category": "Desktop",
+        "price": 99
+    },
+    {
+        "id": "102",
+        "productName": "Magic Mouse - Black Multi-Touch Surface", 
+        "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MMMQ3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1645138486301",
+        "productDescription": "Magic Mouse is wireless and rechargeable, with an optimized foot design that lets it glide smoothly across your desk.",
+        "category": "Desktop",
+        "price": 99
+    },
+    {
+        "id": "103",
+        "productName": "Magic Mouse - Black Multi-Touch Surface", 
+        "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MMMQ3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1645138486301",
+        "productDescription": "Magic Mouse is wireless and rechargeable, with an optimized foot design that lets it glide smoothly across your desk.",
+        "category": "Desktop",
+        "price": 99
+    },
+    {
+        "id": "104",
+        "productName": "Magic Mouse - Black Multi-Touch Surface", 
+        "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MMMQ3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1645138486301",
+        "productDescription": "Magic Mouse is wireless and rechargeable, with an optimized foot design that lets it glide smoothly across your desk.",
+        "category": "Desktop",
+        "price": 99
+    },
+    {
+        "id": "105",
+        "productName": "Magic Mouse - Black Multi-Touch Surface", 
+        "productImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MMMQ3?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1645138486301",
+        "productDescription": "Magic Mouse is wireless and rechargeable, with an optimized foot design that lets it glide smoothly across your desk.",
+        "category": "Desktop",
+        "price": 99
+    }
+]

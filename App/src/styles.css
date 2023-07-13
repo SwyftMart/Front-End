@@ -1,0 +1,43 @@
+/* 
+* THEMEMING : e.g
+* system default
+* dark
+*/
+
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* COLOR PALETTE */
+:root {
+    --folly: #F73859ff;
+    --salmon-pink: #FA94A6ff;
+    --white: #FFFFFFff;
+    --cherry-blossom-pink: #FBB6C2ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    height: 150vh;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--white);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--folly);
+}

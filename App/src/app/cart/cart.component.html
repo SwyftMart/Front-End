@@ -1,0 +1,89 @@
+<div class="sticky">
+    <div class="container" [class.active]="isActive">
+
+        <div class="cart-header">
+            <h2 class="title">
+                Cart
+                <fa-icon [icon]="cartIcon" class="cart-icon"></fa-icon>
+            </h2>
+
+            <!-- CLOSE ICON -->
+            <fa-icon [icon]="closeIcon" class="close-icon" (click)="closeCart()"></fa-icon>
+
+        </div>
+
+        <!-- CART CONTENTS -->
+        <div class="cart-contents" *ngIf="cartService.hasItems(); else noItemsInCart;">
+            <!--===================-->
+            <!--=====TEMPLATE=====-->
+            <!--===================-->
+            <!-- PRODUCT -->
+            <div class="product" *ngFor="let item of getCartItems()">
+                <div class="product-wrapper">
+                    <div class="img-container">
+                        <img src={{item.productImage}} class="product-img">
+                    </div>
+
+                    <div class="product-info">
+                        <div class="info-wrapper">
+                            <h2 class="product-name">
+                                {{ item.productName }}
+                            </h2>
+
+                            <p class="price">
+                                {{ item.price | currency }}
+                            </p>
+                        </div>
+
+                        <div class="product-description">
+                            <p>
+                                {{ item.productDescription }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-controls">
+                    <label for="quantity">
+                        Quantity
+                        <fa-icon [icon]="handIcon"></fa-icon>
+                    </label>
+
+                    <!-- QUANTIY INPUT -->
+                    <input type="number" name="quantity" class="quantity" [(ngModel)]="item.quantity"
+                        (input)="updateCartTotal()">
+
+                    <button class="delete-btn" (click)="deleteCartItem(item)">
+                        <fa-icon [icon]="trashIcon"></fa-icon>
+                    </button>
+                </div>
+            </div>
+            <!--===================-->
+            <!-- PRODUCT INFO END -->
+            <!--===================-->
+            <div class="cart-controls">
+                <div class="total">
+                    <h2>
+                        Total
+                    </h2>
+
+                    <p class="amount">
+                        {{ getCartTotal() | currency}}
+                    </p>
+                </div>
+
+                <button class="checkout-btn" (click)="CHECKOUT()">
+                    Checkout
+                    <fa-icon [icon]="doorIcon"></fa-icon>
+                </button>
+            </div>
+        </div>
+
+        <ng-template #noItemsInCart>
+            <h2 class="empty">
+                No items in cart
+            </h2>
+        </ng-template>
+
+    </div>
+</div>

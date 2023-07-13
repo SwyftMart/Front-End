@@ -1,0 +1,44 @@
+<!-- PRODUCT CONTAINER -->
+<div class="product-container">
+    <div class="product" *ngFor="let product of filteredProducts">
+
+        <div class="img-container">
+            <img loading="lazy" draggable="false" src="{{ product.productImage }}" alt="product image"
+                class="product-img">
+            <!-- PRODUCT CARD ICONS -->
+            <div class="icon-container" *ngIf="Authenticated()">
+                <!-- ADD TO CART ICON -->
+                <a class="addToCartBtn btn" (click)="addProductToCart(product)">
+                    <fa-icon [icon]="cartIcon" class="icon"></fa-icon>
+                </a>
+                <a class="deleteBtn btn" (click)="deleteProduct(product.productId)">
+                    <fa-icon [icon]="deleteIcon" class="icon"></fa-icon>
+                </a>
+                <a class="favorites btn" (click)="addToFavorites()">
+                    <fa-icon [icon]="heartIcon" class="icon"></fa-icon>
+                </a>
+            </div>
+        </div>
+
+        <div class="product-details">
+            <h2 class="product-title">
+                {{ (product.productName.length > 10)? (product.productName | slice:0:10)+'...':(product.productName) }}
+                <fa-icon [icon]="ellipsisIcon"  (click)="showProductDetails(product)"></fa-icon>
+            </h2>
+
+            <h3 class="product-price">
+                {{ product.price | currency }}
+                <span class="previous-price">
+                    {{ product.price + 500 | currency }}
+                </span>
+            </h3>
+
+            <p class="product-description">
+                {{ (product.productDescription.length > 90)? (product.productDescription |
+                slice:0:90)+'...':(product.productDescription) }}
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Display selected product -->
+<app-single-product *ngIf="selectedProduct" [product]="selectedProduct" (close)="closeProduct()"></app-single-product>
