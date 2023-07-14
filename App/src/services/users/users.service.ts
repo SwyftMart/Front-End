@@ -12,7 +12,7 @@ import { PageReloaderService } from '../pageReloader/pageReloader.service';
     providedIn: 'root'
 })
 export class UserService {
-    private BASE_URL: string = 'http://localhost:4000';
+    private BASE_URL: string = 'https://swyft-mart-server.onrender.com';
     private PASSWORD_RESET_REQUEST_URL: string = 'http://localhost:8000/reset';
     private PASSWORD_RESET_URL: string = 'http://localhost:8000/reset/password';
     private users: USER_MODEL[] = [];

@@ -7,7 +7,7 @@ import { PRODUCT_MODEL } from '../../abstract_classes/product.model';
     providedIn: 'root'
 })
 export class ProductService {
-    private BASE_URL = 'http://localhost:4000/products';
+    private BASE_URL = 'https://swyft-mart-server.onrender.com/products';
     private products: PRODUCT_MODEL[] = [];
     private productsSubject: Subject<PRODUCT_MODEL[]> = new Subject<PRODUCT_MODEL[]>();
 
