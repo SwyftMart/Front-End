@@ -1,4 +1,4 @@
-## Syft Mart(*Front End*)
+## Swyft Mart(*Front End*)
 This repository is a dynamic and visually engaging collection of code that drives the user-facing interface of the platform. It comprises a wide array of meticulously crafted HTML, CSS, and JavaScript files that work harmoniously to deliver an intuitive and immersive user experience.
 
 At its core, the repository houses a rich set of HTML templates that define the structure and layout of the platform's various pages. These templates are thoughtfully designed to provide a seamless flow of information, allowing users to navigate effortlessly through different sections and interact with the platform's features.
