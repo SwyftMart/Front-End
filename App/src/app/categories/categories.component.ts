@@ -11,7 +11,7 @@ import { ProductFilterService } from 'src/services/filterProducts/productFilter.
 
 
 @Component({
-  selector: 'app-categories',
+  selector: 'categories',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule, FormsModule],
   templateUrl: './categories.component.html',

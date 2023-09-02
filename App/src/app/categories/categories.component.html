@@ -26,9 +26,7 @@
       <div class="allcategories">
 
         <div class="category-container">
-          <!-- 
-            <input class="categoriescheckbox" type="checkbox" id="allCategories" name="allCategories"  value="allCategories" [(ngModel)]="selectedCategories['all']" (change)="filterProducts()"> -->
-
+          <!-- INPUT -->
           <div class="input-wrp">
             <label for="phones" class="category-label">
               Phones
@@ -39,7 +37,7 @@
               (change)="filterProducts()">
           </div>
 
-
+          <!-- INPUT -->
           <div class="input-wrp">
             <label for="laptops" class="category-label">
               Laptops
@@ -50,7 +48,7 @@
               [(ngModel)]="selectedCategories['laptops']" (change)="filterProducts()">
           </div>
 
-
+          <!-- INPUT -->
           <div class="input-wrp">
             <label for="gaming" class="category-label">
               Gaming
@@ -61,7 +59,7 @@
               (change)="filterProducts()">
           </div>
 
-
+          <!-- INPUT -->
           <div class="input-wrp">
             <label for="desktops" class="category-label">
               Desktops
@@ -71,15 +69,7 @@
             <input type="checkbox" id="desktops" name="desktops" value="Desktops"
               [(ngModel)]="selectedCategories['desktops']" (change)="filterProducts()">
           </div>
-
-
         </div>
-
-        <!-- PREVIOUS LABEL CONTAINER -->
-        <div class="categorieslabels">
-          <!-- <label for="allCategories">All Categories</label> -->
-        </div>
-
       </div>
     </form>
   </div>

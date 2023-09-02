@@ -222,20 +222,25 @@ This selector targets the ".floating-label" element that comes after an input el
     0% {
         opacity: .7;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         opacity: .7;
     }
 }
+
 @keyframes glow {
     0% {
         opacity: .7;
     }
+
     50% {
         opacity: 1;
     }
+
     100% {
         opacity: .7;
     }

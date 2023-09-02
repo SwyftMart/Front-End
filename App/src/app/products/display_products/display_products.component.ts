@@ -15,11 +15,11 @@ import { MessageBoxService } from '../../../services/message-box/message-box.ser
 // THE @Component DECORATOR INDICATES THAT THIS
 // FILE IS A COMPONENT
 @Component({
-    selector: 'product',
-    templateUrl: 'display_products.component.html',
-    styleUrls: ['display_products.component.css'],
-    standalone: true,
-    imports: [CommonModule, FontAwesomeModule, CategoriesComponent, DisplaySingleProductComponent]
+  selector: 'product',
+  templateUrl: 'display_products.component.html',
+  styleUrls: ['display_products.component.css'],
+  standalone: true,
+  imports: [CommonModule, FontAwesomeModule, CategoriesComponent, DisplaySingleProductComponent]
 })
 export class DisplayProductsComponent implements OnInit {
 

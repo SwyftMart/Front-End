@@ -20,11 +20,11 @@ export class CartService {
     // DELETE ITEM FROM CART
     deleteItem(item: CART_ITEM_MODEL) {
         // FIND INDEX OF item IN cartItems ARRAY
-       const index = this.cartItems.indexOf(item);
-       // IF item IS FOUND (index is not -1),  REMOVE item FROM ARRAY
-       if (index !== -1) {
-        this.cartItems.splice(index, 1);
-       }
+        const index = this.cartItems.indexOf(item);
+        // IF item IS FOUND (index is not -1),  REMOVE item FROM ARRAY
+        if (index !== -1) {
+            this.cartItems.splice(index, 1);
+        }
     }
 
     // GET ALL ITEMS IN CART

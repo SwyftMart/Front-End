@@ -12,7 +12,6 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 // SERVICES
 import { SharedService } from '../../../../src/services/forms/shared.service';
 import { ProductService } from '../../../../src/services/products/products.service';
-import { UserService } from '../../../../src/services/users/users.service';
 import { PageReloaderService } from '../../../../src/services/pageReloader/pageReloader.service';
 
 // MODELS

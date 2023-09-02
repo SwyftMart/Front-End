@@ -23,7 +23,7 @@
         <div class="product-details">
             <h2 class="product-title">
                 {{ (product.productName.length > 10)? (product.productName | slice:0:10)+'...':(product.productName) }}
-                <fa-icon [icon]="ellipsisIcon"  (click)="showProductDetails(product)"></fa-icon>
+                <fa-icon [icon]="ellipsisIcon" (click)="showProductDetails(product)"></fa-icon>
             </h2>
 
             <h3 class="product-price">
@@ -41,4 +41,4 @@
     </div>
 </div>
 <!-- Display selected product -->
-<app-single-product *ngIf="selectedProduct" [product]="selectedProduct" (close)="closeProduct()"></app-single-product>
+<single-product *ngIf="selectedProduct" [product]="selectedProduct" (close)="closeProduct()"></single-product>

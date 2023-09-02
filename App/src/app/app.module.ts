@@ -22,6 +22,7 @@ import { MessageBoxComponent } from './message-box/message-box.component';
 import { PaymentComponent } from './payment/payment.component';
 import { SuccessComponent } from './success/success.component';
 import { CartComponent } from './cart/cart.component';
+import { HomeComponent } from './home/home.component';
 
 // THE NgModule DECORATOR INDICATES THAT
 //THIS FILE IS A MODULE
@@ -43,6 +44,7 @@ import { CartComponent } from './cart/cart.component';
         BrowserModule,
         AppRoutingModule,
         FontAwesomeModule,
+        HomeComponent,
         MessageBoxComponent,
         AddProductComponent,
         DisplayProductsComponent,
